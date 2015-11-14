@@ -1,0 +1,43 @@
+g.V(v26).out("appartient_a").properties("name") 
+//result : 
+==>vp[name->Ligne 9]
+==>vp[name->Ligne 11]
+
+g.V(v26).out("gare_suivante").properties("name") 
+//resulat : 
+==>vp[name->Oberkampf]
+==>vp[name->Goncourt]
+
+
+g.V(v26).out("gare_suivante").as('a').out("appartient_a").as('b').select('a', 'b').by('name') 
+//resultat : 
+==>[a:Oberkampf, b:Ligne 9]
+==>[a:Goncourt, b:Ligne 11]
+
+g.V(v26).in("gare_suivante").properties("name")
+//resultat
+==>vp[name->Starsbourg - Saint-D]
+==>vp[name->Arts et Métiers]
+
+g.V(v26).in("gare_suivante").as('a').out('appartient_a').as('b').select('a', 'b').by('name')
+//resultat : 
+==>[a:Starsbourg - Saint-Denis, b:Ligne 9]
+==>[a:Arts et Métiers, b:Ligne 11]
+
+g.V(v26).repeat(out("gare_suivante")).emit().values("name")
+//resultat
+==>Oberkampf
+==>Goncourt
+==>Saint-Ambroise
+==>Belleville
+==>Pyrénées
+==>Jourdain
+==>Place des Fêtes
+==>Télégraphe
+==>Porte des Lilas
+==>Mairie des Lilas
+
+g.V(v24).repeat(out("gare_suivante").simplePath()).until(is(v28)).path().by('name')
+//resulat 
+==>[Rambuteau, Arts et Métiers, République, Goncourt, Belleville]
+

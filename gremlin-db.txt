@@ -1,0 +1,143 @@
+graph = TitanFactory.open('conf/titan-cassandra-es.properties')
+g = graph.traversal()
+
+rerA = graph.addVertex(T.label, "RER A", "name", "RER A", "type", "RER");
+rerB = graph.addVertex(T.label, "RER B", "name", "RER B", "type", "RER");
+metro1 = graph.addVertex(T.label, "Ligne 1", "name", "Ligne 1", "type", "METRO");
+metro2 = graph.addVertex(T.label, "Ligne 2", "name", "Ligne 2", "type", "METRO");
+metro3 = graph.addVertex(T.label, "Ligne 3", "name", "Ligne 3", "type", "METRO");
+metro4 = graph.addVertex(T.label, "Ligne 4", "name", "Ligne 4", "type", "METRO");
+metro5 = graph.addVertex(T.label, "Ligne 5", "name", "Ligne 5", "type", "METRO");
+metro6 = graph.addVertex(T.label, "Ligne 6", "name", "Ligne 6", "type", "METRO");
+metro7 = graph.addVertex(T.label, "Ligne 7", "name", "Ligne 7", "type", "METRO");
+metro8 = graph.addVertex(T.label, "Ligne 8", "name", "Ligne 8", "type", "METRO");
+metro9 = graph.addVertex(T.label, "Ligne 9", "name", "Ligne 9", "type", "METRO");
+metro10 = graph.addVertex(T.label, "Ligne 10", "name", "Ligne 10", "type", "METRO");
+metro11 = graph.addVertex(T.label, "Ligne 11", "name", "Ligne 11", "type", "METRO");
+
+
+v22 = graph.addVertex("name", "Châtelet", "type", "Station");
+v23 = graph.addVertex( "name", "Hôtel de Ville", "type", "Station");
+v24 = graph.addVertex( "name", "Rambuteau", "type", "Station");
+v25 = graph.addVertex("name", "Arts et Métiers", "type", "Station");
+v26 = graph.addVertex("name", "République", "type", "Station");
+v27 = graph.addVertex("name", "Goncourt", "type", "Station");
+v28 = graph.addVertex("name", "Belleville", "type", "Station");
+v29 = graph.addVertex("name", "Pyrénées", "type", "Station");
+v30 = graph.addVertex("name", "Jourdain", "type", "Station");
+v31 = graph.addVertex("name", "Place des Fêtes", "type", "Station");
+v32 = graph.addVertex("name", "Télégraphe", "type", "Station");
+v33 = graph.addVertex("name", "Porte des Lilas", "type", "Station");
+v34 = graph.addVertex("name", "Mairie des Lilas", "type", "Station");
+
+v22.addEdge("appartient_a", metro11);
+v23.addEdge("appartient_a", metro11);
+v24.addEdge("appartient_a", metro11);
+v25.addEdge("appartient_a", metro11);
+v26.addEdge("appartient_a", metro11);
+v27.addEdge("appartient_a", metro11);
+v28.addEdge("appartient_a", metro11);
+v29.addEdge("appartient_a", metro11);
+v30.addEdge("appartient_a", metro11);
+v31.addEdge("appartient_a", metro11);
+v32.addEdge("appartient_a", metro11);
+v33.addEdge("appartient_a", metro11);
+v34.addEdge("appartient_a", metro11);
+
+v23.addEdge("gare_suivante", v24);
+v24.addEdge("gare_suivante", v25);
+v25.addEdge("gare_suivante", v26);
+v26.addEdge("gare_suivante", v27);
+v27.addEdge("gare_suivante", v28);
+v28.addEdge("gare_suivante", v29);
+v29.addEdge("gare_suivante", v30);
+v30.addEdge("gare_suivante", v31);
+v31.addEdge("gare_suivante", v32);
+v32.addEdge("gare_suivante", v33);
+v33.addEdge("gare_suivante", v34);
+
+
+v40 = graph.addVertex("name", "Billancourt", "type", "Station");
+v41 = graph.addVertex("name", "Marcel Sembat", "type", "Station");
+v42 = graph.addVertex("name", "Porte de Saint-Cloud", "type", "Station");
+v43 = graph.addVertex("name", "Exelmans", "type", "Station");
+v44 = graph.addVertex("name", "Michel-Ange - Molitor", "type", "Station");
+v45 = graph.addVertex("name", "Michel-Ange - Auteuil", "type", "Station");
+v46 = graph.addVertex("name", "Jasmin", "type", "Station");
+v47 = graph.addVertex("name", "Ranelagh", "type", "Station");
+v48 = graph.addVertex("name", "La Muette", "type", "Station");
+v49 = graph.addVertex("name", "Rue de la Pompe", "type", "Station");
+v50 = graph.addVertex("name", "Trocadéro", "type", "Station");
+v51 = graph.addVertex("name", "Iéna", "type", "Station");
+v52 = graph.addVertex("name", "Alma - Marceau", "type", "Station");
+v53 = graph.addVertex("name", "Franklin D. Roosevelt", "type", "Station");
+v54 = graph.addVertex("name", "Saint-Philippe-du-Roule", "type", "Station");
+v55 = graph.addVertex("name", "Mirosmenil", "type", "Station");
+v56 = graph.addVertex("name", "Saint-Augustin", "type", "Station");
+v57 = graph.addVertex("name", "Havre - Caumartin", "type", "Station");
+v58 = graph.addVertex("name", "Chaussée d'Antin - La Fayette", "type", "Station");
+v59 = graph.addVertex("name", "Richelieu - Drouot", "type", "Station");
+v60 = graph.addVertex("name", "Grands Boulevards", "type", "Station");
+v61 = graph.addVertex("name", "Bonne Nouvelle", "type", "Station");
+v62 = graph.addVertex("name", "Starsbourg - Saint-Denis", "type", "Station");
+
+v64 = graph.addVertex("name", "Oberkampf", "type", "Station");
+v65 = graph.addVertex("name", "Saint-Ambroise", "type", "Station");
+v66 = graph.addVertex("name", "Voltaire", "type", "Station");
+v67 = graph.addVertex("name", "Charonne", "type", "Station");
+
+v40.addEdge("appartient_a", metro9);
+v41.addEdge("appartient_a", metro9);
+v42.addEdge("appartient_a", metro9);
+v43.addEdge("appartient_a", metro9);
+v44.addEdge("appartient_a", metro9);
+v45.addEdge("appartient_a", metro9);
+v46.addEdge("appartient_a", metro9);
+v47.addEdge("appartient_a", metro9);
+v48.addEdge("appartient_a", metro9);
+v49.addEdge("appartient_a", metro9);
+v50.addEdge("appartient_a", metro9);
+v51.addEdge("appartient_a", metro9);
+v52.addEdge("appartient_a", metro9);
+v53.addEdge("appartient_a", metro9);
+v54.addEdge("appartient_a", metro9);
+v55.addEdge("appartient_a", metro9);
+v56.addEdge("appartient_a", metro9);
+v57.addEdge("appartient_a", metro9);
+v58.addEdge("appartient_a", metro9);
+v59.addEdge("appartient_a", metro9);
+v60.addEdge("appartient_a", metro9);
+v61.addEdge("appartient_a", metro9);
+v62.addEdge("appartient_a", metro9);
+
+v26.addEdge("appartient_a", metro9);
+
+v64.addEdge("appartient_a", metro9);
+v65.addEdge("appartient_a", metro9);
+
+v40.addEdge("gare_suivante", v41);
+v41.addEdge("gare_suivante", v42);
+v42.addEdge("gare_suivante", v43);
+v43.addEdge("gare_suivante", v44);
+v44.addEdge("gare_suivante", v45);
+v45.addEdge("gare_suivante", v46);
+v46.addEdge("gare_suivante", v47);
+v47.addEdge("gare_suivante", v48);
+v48.addEdge("gare_suivante", v49);
+v49.addEdge("gare_suivante", v50);
+v50.addEdge("gare_suivante", v51);
+v51.addEdge("gare_suivante", v52);
+v52.addEdge("gare_suivante", v53);
+v53.addEdge("gare_suivante", v54);
+v54.addEdge("gare_suivante", v55);
+v55.addEdge("gare_suivante", v56);
+v56.addEdge("gare_suivante", v57);
+v57.addEdge("gare_suivante", v58);
+v58.addEdge("gare_suivante", v59);
+v59.addEdge("gare_suivante", v60);
+v60.addEdge("gare_suivante", v61);
+v61.addEdge("gare_suivante", v62);
+v62.addEdge("gare_suivante", v26);
+v26.addEdge("gare_suivante", v64);
+v64.addEdge("gare_suivante", v65);
+
